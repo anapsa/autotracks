@@ -13,6 +13,7 @@
 		DD90BB792BF3D64200094E2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD90BB782BF3D64200094E2B /* Preview Assets.xcassets */; };
 		DD90BB802BF3E3CF00094E2B /* generosMusicais.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB7F2BF3E3CF00094E2B /* generosMusicais.swift */; };
 		DD90BB822BF3E4AD00094E2B /* styleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB812BF3E4AD00094E2B /* styleGuide.swift */; };
+		DD90BB842BF532E500094E2B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB832BF532E500094E2B /* DesignSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		DD90BB782BF3D64200094E2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DD90BB7F2BF3E3CF00094E2B /* generosMusicais.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generosMusicais.swift; sourceTree = "<group>"; };
 		DD90BB812BF3E4AD00094E2B /* styleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleGuide.swift; sourceTree = "<group>"; };
+		DD90BB832BF532E500094E2B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				DD90BB812BF3E4AD00094E2B /* styleGuide.swift */,
 				DD90BB752BF3D64200094E2B /* Assets.xcassets */,
 				DD90BB772BF3D64200094E2B /* Preview Content */,
+				DD90BB832BF532E500094E2B /* DesignSystem.swift */,
 			);
 			path = aautotracks;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD90BB742BF3D64000094E2B /* ContentView.swift in Sources */,
+				DD90BB842BF532E500094E2B /* DesignSystem.swift in Sources */,
 				DD90BB802BF3E3CF00094E2B /* generosMusicais.swift in Sources */,
 				DD90BB822BF3E4AD00094E2B /* styleGuide.swift in Sources */,
 				DD90BB722BF3D64000094E2B /* aautotracksApp.swift in Sources */,
