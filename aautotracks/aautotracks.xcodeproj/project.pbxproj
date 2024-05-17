@@ -14,6 +14,8 @@
 		DD90BB802BF3E3CF00094E2B /* generosMusicais.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB7F2BF3E3CF00094E2B /* generosMusicais.swift */; };
 		DD90BB822BF3E4AD00094E2B /* styleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB812BF3E4AD00094E2B /* styleGuide.swift */; };
 		DD90BB842BF532E500094E2B /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB832BF532E500094E2B /* DesignSystem.swift */; };
+		DD90BB872BF6984900094E2B /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = DD90BB862BF6984900094E2B /* SpotifyiOS */; };
+		DD90BB892BF69E4600094E2B /* integracaoSpotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB882BF69E4600094E2B /* integracaoSpotify.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,7 @@
 		DD90BB7F2BF3E3CF00094E2B /* generosMusicais.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = generosMusicais.swift; sourceTree = "<group>"; };
 		DD90BB812BF3E4AD00094E2B /* styleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleGuide.swift; sourceTree = "<group>"; };
 		DD90BB832BF532E500094E2B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		DD90BB882BF69E4600094E2B /* integracaoSpotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = integracaoSpotify.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD90BB872BF6984900094E2B /* SpotifyiOS in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +45,7 @@
 		DD90BB652BF3D64000094E2B = {
 			isa = PBXGroup;
 			children = (
+				DD90BB882BF69E4600094E2B /* integracaoSpotify.swift */,
 				DD90BB702BF3D64000094E2B /* aautotracks */,
 				DD90BB6F2BF3D64000094E2B /* Products */,
 			);
@@ -92,6 +97,9 @@
 			dependencies = (
 			);
 			name = aautotracks;
+			packageProductDependencies = (
+				DD90BB862BF6984900094E2B /* SpotifyiOS */,
+			);
 			productName = aautotracks;
 			productReference = DD90BB6E2BF3D64000094E2B /* aautotracks.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +128,9 @@
 				Base,
 			);
 			mainGroup = DD90BB652BF3D64000094E2B;
+			packageReferences = (
+				DD90BB852BF6984900094E2B /* XCRemoteSwiftPackageReference "ios-sdk" */,
+			);
 			productRefGroup = DD90BB6F2BF3D64000094E2B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -147,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD90BB742BF3D64000094E2B /* ContentView.swift in Sources */,
+				DD90BB892BF69E4600094E2B /* integracaoSpotify.swift in Sources */,
 				DD90BB842BF532E500094E2B /* DesignSystem.swift in Sources */,
 				DD90BB802BF3E3CF00094E2B /* generosMusicais.swift in Sources */,
 				DD90BB822BF3E4AD00094E2B /* styleGuide.swift in Sources */,
@@ -354,6 +366,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD90BB852BF6984900094E2B /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spotify/ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD90BB862BF6984900094E2B /* SpotifyiOS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD90BB852BF6984900094E2B /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			productName = SpotifyiOS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD90BB662BF3D64000094E2B /* Project object */;
 }

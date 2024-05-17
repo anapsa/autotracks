@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct aautotracksApp: App {
-    var designSystem: DesignSystem = .init(color: .init(background: .fundopadrao, foreground: .escuropadrao, text: .mediopadrao))
+    var designSystem: DesignSystem = .init(color: .default)
     var body: some Scene {
         WindowGroup {
             ContentView(designSystem: designSystem)
