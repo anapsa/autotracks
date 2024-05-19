@@ -12,18 +12,26 @@ import Foundation
 
 struct ContentView: View {
     @State var tempoViagem: Int? = nil
+    @State private var selectedTime = Date()
     @State var trocaCor: [Bool] = [false,false,false,false,false,false]
     @ObservedObject var designSystem: DesignSystem
     @State var humourClass = -1
     @State var sleepClass = -1
-    mutating func changeArray(index: Int) {
-        self.trocaCor[index] = true
+    func showButton() -> Bool {
+        for (element) in trocaCor{
+            if element {
+                if(humourClass != -1 && sleepClass != -1) {
+                    return true
+                }
+            }
+        }
+        return false
     }
-    
     var body: some View {
         ZStack(alignment: .leading) {
             designSystem.color.background
-            VStack (alignment: .leading, spacing: 26) {
+            VStack (alignment: .leading) {
+            
                 Text("Gênero Musical")
                 //primeira linha de generos musicais
                 HStack(alignment: .top, spacing: 52) {
@@ -99,6 +107,7 @@ struct ContentView: View {
                     .frame(width:78, height:78)
                 }
                 .frame(maxWidth: .infinity)
+                Spacer().frame(height: 26)
                 //segunda linha de generos musicais
                 HStack(alignment: .top, spacing: 52) {
                     //botao para selecionar rap
@@ -167,15 +176,26 @@ struct ContentView: View {
                     )
                     .frame(width:78, height:78)
                 }
-                
                 .frame(maxWidth: .infinity)
+                //separar
+                Spacer().frame(height: 26)
+                
+                
                 Text("Tempo de Viagem")
-                TextField("  Digite o tempo da sua viagem na forma 00:00  ", value: $tempoViagem, format:.number)
-                    .background(
-                        designSystem.color.foreground
-                            .clipShape(.rect(cornerRadius:20))
-                    
-                    )
+               
+                //fazer o datepicker
+                DatePicker(     "Select Time",
+                                selection: $selectedTime,
+                                displayedComponents: .hourAndMinute
+                            )
+                           
+                        .background(Color(designSystem.color.foreground))
+                        .labelsHidden() // Oculta o rótulo
+                        .cornerRadius(20)
+                        .frame(maxWidth: .infinity, maxHeight:26)
+                Spacer().frame(height: 26)
+                
+                
                 Text("Seu humor")
                 HStack(alignment:.top, spacing: 23) {
                     ForEach(0..<5) { index in
@@ -196,6 +216,7 @@ struct ContentView: View {
                     
                 }
                 .frame(maxWidth: .infinity)
+                Spacer().frame(height: 26)
                 Text("Sua quantidade de sono")
                 HStack(alignment:.top, spacing: 23) {
                     ForEach(0..<5) { index in
@@ -216,6 +237,15 @@ struct ContentView: View {
                     
                 }
                 .frame(maxWidth: .infinity)
+                Spacer().frame(height: 26)
+                if showButton() {
+                    Button(action: {}) {
+                        Image(systemName: "circle.fill")
+                            .foregroundColor(designSystem.color.text)
+                            .font(.system(size: 104))
+                    }
+                    .frame(maxWidth: .infinity)
+                }
                 
             }
             .keyboardType(.numberPad)
