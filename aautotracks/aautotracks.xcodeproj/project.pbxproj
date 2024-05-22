@@ -17,6 +17,7 @@
 		DD90BB872BF6984900094E2B /* SpotifyiOS in Frameworks */ = {isa = PBXBuildFile; productRef = DD90BB862BF6984900094E2B /* SpotifyiOS */; };
 		DD90BB892BF69E4600094E2B /* integracaoSpotify.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BB882BF69E4600094E2B /* integracaoSpotify.swift */; };
 		DD90BBA72BFBCA2F00094E2B /* ShowPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90BBA62BFBCA2F00094E2B /* ShowPlaylist.swift */; };
+		DD90BBAD2BFE660900094E2B /* Lexend-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DD90BBAB2BFE63DE00094E2B /* Lexend-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		DD90BB832BF532E500094E2B /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		DD90BB882BF69E4600094E2B /* integracaoSpotify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = integracaoSpotify.swift; sourceTree = "<group>"; };
 		DD90BBA62BFBCA2F00094E2B /* ShowPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPlaylist.swift; sourceTree = "<group>"; };
+		DD90BBAB2BFE63DE00094E2B /* Lexend-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lexend-Bold.ttf"; sourceTree = "<group>"; };
+		DD90BBAC2BFE642500094E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 		DD90BB652BF3D64000094E2B = {
 			isa = PBXGroup;
 			children = (
+				DD90BBAB2BFE63DE00094E2B /* Lexend-Bold.ttf */,
 				DD90BB882BF69E4600094E2B /* integracaoSpotify.swift */,
 				DD90BBA62BFBCA2F00094E2B /* ShowPlaylist.swift */,
 				DD90BB702BF3D64000094E2B /* aautotracks */,
@@ -65,7 +69,9 @@
 		DD90BB702BF3D64000094E2B /* aautotracks */ = {
 			isa = PBXGroup;
 			children = (
+				DD90BBAC2BFE642500094E2B /* Info.plist */,
 				DD90BB712BF3D64000094E2B /* aautotracksApp.swift */,
+				DD90BBAA2BFE63BD00094E2B /* fonts */,
 				DD90BB732BF3D64000094E2B /* ContentView.swift */,
 				DD90BB7F2BF3E3CF00094E2B /* generosMusicais.swift */,
 				DD90BB812BF3E4AD00094E2B /* styleGuide.swift */,
@@ -82,6 +88,13 @@
 				DD90BB782BF3D64200094E2B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD90BBAA2BFE63BD00094E2B /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD90BB792BF3D64200094E2B /* Preview Assets.xcassets in Resources */,
+				DD90BBAD2BFE660900094E2B /* Lexend-Bold.ttf in Resources */,
 				DD90BB762BF3D64200094E2B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +316,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"aautotracks/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = aautotracks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -330,6 +345,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"aautotracks/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = aautotracks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

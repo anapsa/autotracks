@@ -13,9 +13,7 @@ extension Font {
         weight: .bold,
         design: .rounded
     )
-    static let generos: Font = .system(
-        size: 16,
-        weight: .bold,
-        design: .rounded
+    static let generos: Font = .custom("Lexend-Bold",
+        size: 16
     )
 }

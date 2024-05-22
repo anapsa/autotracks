@@ -18,8 +18,26 @@ struct ContentView: View {
     @ObservedObject var designSystem: DesignSystem
     @State var humourClass = -1
     @State var sleepClass = -1
-    
+    @State var definePlaylist = -1
+    func calculate() {
+        if((humourClass + sleepClass)>5) { //bom humor
+            if(trocaCor[0]) {definePlaylist = 1}
+            else if(trocaCor[1]) {definePlaylist = 2}
+            else if(trocaCor[2]) {definePlaylist = 3}
+            else if(trocaCor[3]) {definePlaylist = 4}
+            else if(trocaCor[4]) {definePlaylist = 5}
+            else {definePlaylist = 6}
+        } else {
+            if(trocaCor[0]) {definePlaylist = 7}
+            else if(trocaCor[1]) {definePlaylist = 8}
+            else if(trocaCor[2]) {definePlaylist = 9}
+            else if(trocaCor[3]) {definePlaylist = 10}
+            else if(trocaCor[4]) {definePlaylist = 11}
+            else {definePlaylist = 12}
+        }
+    }
     //função para indicar se o usuario preencheu todos os campos antes de gerar o botão
+    
     func showButton() -> Bool {
         for (element) in trocaCor{
             if element {
@@ -33,19 +51,25 @@ struct ContentView: View {
     
     var body: some View {
         //navigationstack principal
-        NavigationStack {
+        //NavigationStack {
             //scrollview da navigationstacl
-            ScrollView {
+           // ScrollView {
                 //zstack para ordenar todos os componentes da tela
                 ZStack(alignment: .leading) {
                     //define a cor do background
-                    designSystem.color.background
+                    designSystem.color.text
                         .ignoresSafeArea(.all)
                     //vstack para alinhar todos os componentes verticalmente
+                   
+                    Color(designSystem.color.background)
+                        .cornerRadius(30)
+                        .offset(y: 170)
+                    
                     VStack (alignment: .leading) {
                         //espaço definido entre a navigation bar e o primeiro componente
                         Spacer().frame(height:26)
                         Text("Gênero Musical")
+                            .font(.custom("Lexend-Bold", size: 16))
                         //primeira linha de generos musicais
                         HStack(alignment: .top, spacing: 52) {
                             //botao para selecionar mbp
@@ -61,10 +85,12 @@ struct ContentView: View {
                                     if trocaCor[0] {
                                         designSystem.color.text
                                         Text("MBP")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.foreground)
                                     } else {
                                         designSystem.color.foreground
                                         Text("MBP")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.text)
                                         
                                     }
@@ -83,11 +109,13 @@ struct ContentView: View {
                                 ZStack {
                                     if trocaCor[1] {
                                         designSystem.color.text
-                                        Text("Samba")
+                                        Text("SAMBA")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.foreground)
                                     } else {
                                         designSystem.color.foreground
-                                        Text("Samba")
+                                        Text("SAMBA")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.text)
                                     }
                                     
@@ -105,11 +133,13 @@ struct ContentView: View {
                                 ZStack {
                                     if trocaCor[2]{
                                         designSystem.color.text
-                                        Text("Rock")
+                                        Text("ROCK")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.foreground)
                                     } else {
                                         designSystem.color.foreground
-                                        Text("Rock")
+                                        Text("ROCK")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.text)
                                     }
                                 }
@@ -132,11 +162,13 @@ struct ContentView: View {
                                 ZStack {
                                     if trocaCor[3] {
                                         designSystem.color.text
-                                        Text("Rap")
+                                        Text("RAP")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.foreground)
                                     } else {
                                         designSystem.color.foreground
-                                        Text("Rap")
+                                        Text("RAP")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.text)
                                     }
                                 }
@@ -154,11 +186,13 @@ struct ContentView: View {
                                 ZStack {
                                     if trocaCor[4] {
                                         designSystem.color.text
-                                        Text("Funk")
+                                        Text("FUNK")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.foreground)
                                     } else {
                                         designSystem.color.foreground
-                                        Text("Funk")
+                                        Text("FUNK")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.text)
                                     }
                                 }
@@ -175,11 +209,13 @@ struct ContentView: View {
                                 ZStack {
                                     if trocaCor[5] {
                                         designSystem.color.text
-                                        Text("Pop")
+                                        Text("POP")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.foreground)
                                     } else {
                                         designSystem.color.foreground
-                                        Text("Pop")
+                                        Text("POP")
+                                            .font(.custom("Lexend-Bold", size: 16))
                                             .foregroundStyle(designSystem.color.text)
                                     }
                                 }
@@ -192,7 +228,7 @@ struct ContentView: View {
                         //separar
                         Spacer().frame(height: 26)
                         Text("Tempo de Viagem")
-                        
+                            .font(.custom("Lexend-Bold", size: 16))
                         //fazer o datepicker
                         DatePicker(     "Select Time",
                                         selection: $selectedTime,
@@ -207,6 +243,7 @@ struct ContentView: View {
                         
                         
                         Text("Seu humor")
+                            .font(.custom("Lexend-Bold", size: 16))
                         HStack(alignment:.top, spacing: 23) {
                             ForEach(0..<5) { index in
                                 Button(action: {
@@ -228,6 +265,7 @@ struct ContentView: View {
                         .frame(maxWidth: .infinity)
                         Spacer().frame(height: 26)
                         Text("Sua quantidade de sono")
+                            .font(.custom("Lexend-Bold", size: 16))
                         HStack(alignment:.top, spacing: 23) {
                             ForEach(0..<5) { index in
                                 Button(action: {
@@ -259,6 +297,7 @@ struct ContentView: View {
                         if showButton() {
                             Button(action: {
                                 generatePlaylist = true
+                                calculate()
                             }) {
                                 Image(systemName: "circle.fill")
                                     .foregroundColor(designSystem.color.text)
@@ -269,11 +308,13 @@ struct ContentView: View {
                     }
                     .padding(.bottom,26)
                     if generatePlaylist {
+                        
                         //chama a nova view "por cima" da view anterior
-                        ShowPlaylist(designSystem: designSystem)
+                        ShowPlaylist(designSystem: designSystem, generatePlaylist: $generatePlaylist, definePlaylist: $definePlaylist)
                     }
                     
                 }
+                .ignoresSafeArea(.all)
                 .animation(.easeIn, value: designSystem.color)
                 .containerRelativeFrame(.vertical)
                 .navigationTitle("AutoTracks")
@@ -282,9 +323,9 @@ struct ContentView: View {
                 .toolbarColorScheme(.dark, for: .navigationBar)
                 
             }
-            .ignoresSafeArea(.all)
-        }
-    }
+            //.ignoresSafeArea(.all)
+        //}
+    //}
 }
 
 #Preview {
