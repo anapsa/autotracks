@@ -50,10 +50,6 @@ struct ContentView: View {
     }
     
     var body: some View {
-        //navigationstack principal
-        //NavigationStack {
-            //scrollview da navigationstacl
-           // ScrollView {
                 //zstack para ordenar todos os componentes da tela
                 ZStack(alignment: .leading) {
                     //define a cor do background
@@ -66,7 +62,13 @@ struct ContentView: View {
                         .offset(y: 170)
                     
                     VStack (alignment: .leading) {
+                        Text("autotracks").font(.custom("Lexend-Bold", size: 32))
+                            .frame(maxWidth: .infinity)
+                            .offset(y: -40)
+                            .foregroundColor(designSystem.color.foreground)
+                        
                         //espaço definido entre a navigation bar e o primeiro componente
+                        
                         Spacer().frame(height:26)
                         Text("Gênero Musical")
                             .font(.custom("Lexend-Bold", size: 16))
@@ -299,9 +301,40 @@ struct ContentView: View {
                                 generatePlaylist = true
                                 calculate()
                             }) {
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(designSystem.color.text)
-                                    .font(.system(size: 104))
+                                HStack(alignment: .center) {
+                                    ZStack(alignment:.leading) {
+                                        
+                                        Image(systemName: "arrowtriangle.left.fill")
+                                            .foregroundColor(designSystem.color.text)
+                                            .font(.system(size:52))
+                                  
+                                        Rectangle()
+                                            .fill(designSystem.color.text)
+                                            .frame(width: 10, height: 26)
+                                            //.//offset(x:-45)
+                                    }
+                                    ZStack {
+                                        Image(systemName: "circle.fill")
+                                            .foregroundColor(designSystem.color.text)
+                                            .font(.system(size: 104))
+                                        Text("PLAY")
+                                            .font(.custom("Lexend-Bold", size: 16))
+                                            .foregroundStyle(designSystem.color.foreground)
+                                        
+                                    }
+                                    ZStack(alignment:.leading) {
+                                        
+                                        Image(systemName: "arrowtriangle.right.fill")
+                                            .foregroundColor(designSystem.color.text)
+                                            .font(.system(size:52))
+                                  
+                                        Rectangle()
+                                            .fill(designSystem.color.text)
+                                            .frame(width: 10, height: 26)
+                                            .offset(x:44)
+                                    }
+                                }
+                                
                             }
                             .frame(maxWidth: .infinity)
                         }
